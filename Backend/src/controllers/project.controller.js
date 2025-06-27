@@ -1,5 +1,6 @@
-import { PrismaClient, ProjectStatus } from '@prisma/client';
 import { sendMail } from '../lib/mailer.js';
+import pkg from '@prisma/client';
+const { PrismaClient, ProjectStatus } = pkg;
 
 const prisma = new PrismaClient();
 console.log('Project controller loaded');
