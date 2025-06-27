@@ -23,7 +23,12 @@ const app = express();
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://selling-buyer-backend-2.onrender.com',
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
